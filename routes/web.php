@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\TagController;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
-
 
 Route::get('/', function () {
     return view('welcome', [
         'tags' => Tag::get()
     ]);
 });
+
+Route::post('tags', [App\Http\Controllers\TagController::class, 'store']);
