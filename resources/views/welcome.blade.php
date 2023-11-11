@@ -11,16 +11,16 @@
         <h4>Listado de Etiquetas</h4>
         <table>
             @forelse($tags as $tag)
-
+            <tr>
+                <td>{{ $tag->name }}</td>
+            </tr>
             @empty
             <tr>
                 <td>
                     <p>No hay etiquetas</p>
                 </td>
             </tr>
-
             @endforelse
-        </table>
-       
+        </table>   
     </body>
 </html>
