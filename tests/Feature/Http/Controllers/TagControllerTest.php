@@ -18,7 +18,7 @@ class TagControllerTest extends TestCase
             ->post('tags', ['name' => 'PHP'])
             ->assertRedirect('/');
 
-       $this->makeFaker('tags', ['name' => 'PHP']);
+       $this->assertDatabaseHas('tags', ['name' => 'PHP']);
     }
 
     

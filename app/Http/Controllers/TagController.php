@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tag;
 use Illuminate\Http\Request;
+
+use App\Models\Tag;
 
 class TagController extends Controller
 {
     public function store(Request $request)
     {
         $request->validate([
-            'name'=> 'required'
+            'name' => 'required'
         ]);
 
-        Tag::created($request->all());
+        Tag::create($request->all());
 
         return redirect('/');
     }
@@ -23,6 +24,8 @@ class TagController extends Controller
         $tag->delete();
         
         return redirect('/');
+
+        
     }
 
 
